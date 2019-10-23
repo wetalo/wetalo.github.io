@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>Sarcastify</title>
+</head>
+<body>
+	<textarea id="TextInput" style="width: 300px; height: 100px;"></textarea>
+	<br>
+	<input type="button" value="Sarcastify It" name="ButtonInput" onclick="Sarcastify();">
+</body>
+</html>
+
+<script type="text/javascript">
+	function Sarcastify(){
+		var textString = document.getElementById("TextInput").value;
+
+		var newString = "";
+		for(var i=0; i<textString.length; i++){
+			if(i % 2 == 0){
+				newString += ("" + textString.charAt(i)).toUpperCase();
+			} else {
+				newString += ("" + textString.charAt(i)).toLowerCase();
+			}
+		}
+
+		document.getElementById("TextInput").value = newString;
+	}
+</script>
